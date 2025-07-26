@@ -48,4 +48,4 @@ To run Lookup2Heaven, make sure to:
 
 ## 📝 License
 
-This project is licensed. View the [LICENSE](LICENSE.md) file for details.
+This project is licensed. View the [LICENSE](LICENSE.txt) file for details.

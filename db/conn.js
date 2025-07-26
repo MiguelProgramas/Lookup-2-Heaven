@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('Lookup2Heaven', 'root', '', {
-    host: 'locahost',
+    host: 'localhost',
     dialect: 'mysql',
 })
 

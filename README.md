@@ -18,9 +18,9 @@ To install Lookup2Heaven, follow these steps:
 
 - Create a schema on your workbench called "lookup2heaven".
 
-<img src="readMeImgs/createschema1.PNG" alt="Tip for creating the correct schema, image number 1">;
-<img src="readMeImgs/createschema2.PNG" alt="Tip for creating the correct schema, image number 2">;
-<img src="readMeImgs/createschema3.PNG" alt="Tip for creating the correct schema, image number 3">;
+<img src="readmeImgs/createschema1.PNG" alt="Tip for creating the correct schema, image number 1">;
+<img src="readmeImgs/createschema2.PNG" alt="Tip for creating the correct schema, image number 2">;
+<img src="readmeImgs/createschema3.PNG" alt="Tip for creating the correct schema, image number 3">;
 
 - That's all! The program will do the rest (creating tables, etc) for you!
 

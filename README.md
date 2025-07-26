@@ -12,7 +12,7 @@ Before cloning, remember to have the following:
 - The latest version of MySQL Community Workbench installed.
 - The latest version of XAMMP installed.
 
-## 🚀 Instalando Lookup2Heaven
+## 🚀 Installing Lookup2Heaven
 
 To install Lookup2Heaven, follow these steps:
 
@@ -46,6 +46,6 @@ To run Lookup2Heaven, make sure to:
 - Start your MySQL connection using the workbench.
 - Run "npm start" in your terminal.
 
-## 📝 Licence
+## 📝 License
 
-This project has no active licences. Stay tuned!
+This project is licensed. View the [LICENSE](LICENSE.md) file for details.

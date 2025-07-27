@@ -1,9 +1,16 @@
+
+
 # Lookup (to) Heaven!
+
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/MiguelProgramas/Lookup-2-Heaven?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/MiguelProgramas/Lookup-2-Heaven?style=for-the-badge)
 
-<img src="readmeImgs/Lookup2Heaven.png" alt="The project's logo, featuring a winged Bible in a circled, blue background, with the words 'Lookup (to) Heaven' beneath.">
+<img style="display: block;
+  margin-left: auto;
+  margin-right: auto;" src="readmeImgs/Lookup2Heaven.png" alt="The project's logo, featuring a winged Bible in a circled, blue background, with the words 'Lookup (to) Heaven' beneath.">
+
+
 
 > A website for all your ceremonial duty needs! Bible verses and a community tab are complementary!
 

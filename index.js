@@ -11,6 +11,14 @@ const conn = require('./db/conn');
 // Models
 const Tought = require('./models/Verse')
 const User = require('./models/User')
+
+// Routes
+
+const versesRoutes = require('./routes/versesRoutes');
+
+// Controllers 
+const VersesController = require('./controllers/VersesController');
+
 // Template engine
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
@@ -38,7 +46,6 @@ app.use(
         cookie: {
             secure: false,
             maxAge: 360000,
-            expires: new Date(Date.now + 360000),
             httpOnly: true
         }
     })
@@ -59,7 +66,11 @@ app.use((req, res, next) => {
     }
 
     next()
-})
+});
+
+app.use('/verses', versesRoutes);
+
+app.get('/', VersesController.showVerses);
 
 conn
     .sync()

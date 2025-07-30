@@ -17,7 +17,7 @@ text-align: center;
 
 #logo img {
 
-    height: 85px;
+    height: 90px;
 
 }
 
@@ -30,9 +30,9 @@ text-align: center;
 
 #navbar {
 
-    margin-top: .25em;
+    margin-top: .5em;
     display: flex;
-    padding: 1.5em 1.5em;
+    padding: .5em 1em;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(0, 195, 255);

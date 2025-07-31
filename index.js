@@ -15,9 +15,11 @@ const User = require('./models/User')
 // Routes
 
 const versesRoutes = require('./routes/versesRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 // Controllers 
 const VersesController = require('./controllers/VersesController');
+const AuthController = require('./controllers/AuthController');
 
 // Template engine
 app.engine('handlebars', exphbs.engine());
@@ -69,6 +71,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/verses', versesRoutes);
+app.use('/', authRoutes);
 
 app.get('/', VersesController.showVerses);
 

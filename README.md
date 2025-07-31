@@ -19,7 +19,7 @@
 Before cloning, remember to have the following:
 
 - The latest version of MySQL Community Workbench installed.
-- The latest version of XAMMP installed.
+- The latest version of XAMPP installed.
 
 ## 🚀 Installing Lookup2Heaven
 
@@ -46,10 +46,10 @@ To install Lookup2Heaven, follow these steps:
 
 To run Lookup2Heaven, make sure to:
 
-- Run your copy of XAMMP.
-- Connect to MySQL through XAMMP (make sure it is running on PORT 3306!) <br>
+- Run your copy of XAMPP.
+- Connect to MySQL through XAMPP (make sure it is running on PORT 3306!) <br>
 
-  <img src="readmeImgs/XAMMPcontrolpanel.PNG" alt="Tip for starting XAMMP connection to MySQL"><br>
+  <img src="readmeImgs/XAMPPcontrolpanel.PNG" alt="Tip for starting XAMPP connection to MySQL"><br>
   
 - Run your copy of MySQL workbench.
 - Start your MySQL connection using the workbench.

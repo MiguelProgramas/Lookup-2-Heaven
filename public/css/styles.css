@@ -1,0 +1,108 @@
+* {
+
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: beige;
+
+}
+
+h1 {
+
+text-align: center;
+
+}
+
+#logo img {
+
+    height: 90px;
+
+}
+
+#images-nav {
+
+    position: relative;
+
+}
+
+
+#navbar {
+
+    margin-top: .5em;
+    display: flex;
+    padding: .5em 1em;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(0, 195, 255);
+    margin-bottom: .5em;
+
+}
+
+#navbar ul {
+
+    display: flex;
+    list-style: none;
+
+}
+
+#navbar ul li {
+
+    padding: 0 1em;
+
+}
+
+#navbar ul li a {
+
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    transition: .5s;
+
+}
+
+#navbar ul li a:hover {
+
+    color:rgb(0, 195, 255)
+
+}
+
+#upper {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 500ms;
+
+}
+
+#upper:hover {
+
+opacity: 1;
+
+}
+
+.container {
+
+min-height: 60vh;
+padding: 2em;
+
+}
+
+footer {
+
+display: flex;
+justify-content: center;
+background-color: rgb(8, 97, 124);;
+border: 1px solid rgb(7, 63, 80);
+
+}
+
+footer p {
+
+    color:rgb(7, 63, 80);
+    padding: 1em;
+    font-weight: bold;
+}

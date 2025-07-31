@@ -37,6 +37,15 @@
     </nav>
 
     <div class="container">
+
+
+        
+        {{#if messages.message}}
+            <div id="flash">
+                {{messages.message}}
+            </div>
+        {{/if}}
+
     {{{body}}}
     </div>
     <footer>

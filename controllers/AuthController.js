@@ -8,4 +8,19 @@ module.exports = class AuthController {
         res.render('auth/register');
     }
 
+    static registerPost(req, res) {
+
+        const { name, email, password, passwordconfirmation } = req.body;
+
+        if (password !== passwordconfirmation) {
+
+            req.flash('message', 'These passwords do not match, friend. Please, try again!');
+            res.render('auth/register');
+
+            return
+
+        }
+
+    }
+
 }

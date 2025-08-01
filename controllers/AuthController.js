@@ -97,7 +97,7 @@ module.exports = class AuthController {
 
             req.session.save(() => {
 
-                res.render('verses/home');
+                res.redirect('/');
 
             })
 

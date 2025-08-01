@@ -4,7 +4,49 @@ const bcrypt = require('bcryptjs')
 module.exports = class AuthController {
 
     static login(req, res) {
+
         res.render('auth/login');
+
+    }
+
+    static async loginPost(req, res) {
+
+        const { email, password } = req.body;
+
+        const user = await User.findOne({where: {email: email}})
+
+        if (!user) {
+
+            const invalidUser = true;
+
+            res.render('auth/login', { invalidUser });
+
+            return
+
+        }
+
+        const passwordsMatch = bcrypt.compareSync(password, user.password);
+
+        if (!passwordsMatch) {
+
+            req.flash('message', "Right e-mail, wrong password, friend!");
+            res.render('auth/login');
+
+            return
+
+        }
+
+            req.session.userid = user.id;
+
+            req.flash('message', 'You are logged in! Great to have you!');
+
+            req.session.save(() => {
+
+                res.redirect('/');
+
+            })
+
+
     }
 
     static register(req, res) {

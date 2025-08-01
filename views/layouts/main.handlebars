@@ -61,6 +61,12 @@
             </div>
         {{/if}}
 
+        {{#if invalidUser}}
+            <div id="flash">
+                <p>This account doesn't exist... <a href="/register">Yet!</a></p>
+            </div>
+        {{/if}}
+
 
     {{{body}}}
     </div>

@@ -30,8 +30,17 @@
 
         <ul>
             <li><a href="/"><h3>Verses</h3></a></li>
+
+            {{#if session.userid}}
+                <li><a href="/dashboard"><h3 id="biggest">Share a verse!</h3></a></li>
+                <li><a href="/logout"><h3>Logout</h3></a></li>
+            {{else}}
+
             <li><a href="/login"><h3>Login</h3></a></li>
             <li><a href="/register"><h3>Register</h3></a></li>
+
+            {{/if}}
+
         </ul>
 
     </nav>
@@ -45,6 +54,13 @@
                 {{messages.message}}
             </div>
         {{/if}}
+
+        {{#if userAlreadyExists}}
+            <div id="flash">
+                <p>This e-mail is already in use! Did you want to <a href="/login">login?</a></p>
+            </div>
+        {{/if}}
+
 
     {{{body}}}
     </div>

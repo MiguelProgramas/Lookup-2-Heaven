@@ -1,3 +1,6 @@
+const User = require("../models/User");
+const bcrypt = require('bcryptjs')
+
 module.exports = class AuthController {
 
     static login(req, res) {
@@ -8,7 +11,7 @@ module.exports = class AuthController {
         res.render('auth/register');
     }
 
-    static registerPost(req, res) {
+    static async registerPost(req, res) {
 
         const { name, email, password, passwordconfirmation } = req.body;
 
@@ -18,6 +21,51 @@ module.exports = class AuthController {
             res.render('auth/register');
 
             return
+
+        }
+
+        const userAlreadyExists = await User.findOne({where: {email: email}})
+
+        if (userAlreadyExists) {
+
+            res.render('auth/register', { userAlreadyExists });
+
+            return
+
+        }
+
+        const salt = bcrypt.genSaltSync(10);
+        const hashedPassword = bcrypt.hashSync(password, salt);
+
+        const user = {
+
+            name,
+            email,
+            password: hashedPassword
+
+        }
+
+        try {
+
+            const createdUser = await User.create(user);
+
+            req.session.userid = createdUser.id;
+
+            req.flash('message', 'You have succesfully registered an account! Hooray!');
+
+            req.session.save(() => {
+
+                res.render('verses/home');
+
+            })
+
+        }
+
+        catch (err) {
+
+            req.flash('message', `Oh no! An error occurred: ${err}`);
+
+            res.render('verses/home');
 
         }
 

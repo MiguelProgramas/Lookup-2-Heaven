@@ -73,11 +73,29 @@ h1 {
 
 }
 
-#navbar ul li a:hover {
+#biggest {
+
+    min-width: 133px;
+    text-align: center;
+    color: rgb(8, 97, 124);
+    transition: .5s;
+
+}
+
+#biggest:hover {
 
     color:rgb(0, 195, 255)
 
 }
+
+
+#navbar ul li a:hover {
+
+    color:rgb(0, 195, 255);
+
+}
+
+
 
 #navbar span {
 
@@ -210,5 +228,25 @@ form input[type="submit"]:hover {
     border-radius: 5px;
     max-width: 60%;
     margin: 0 auto 1em
+
+}
+
+#flash p, #flash a {
+
+    background-color: transparent;
+
+}
+
+#flash a {
+
+    text-decoration: none;
+    color: yellow;
+    transition: .5s;
+
+}
+
+#flash a:hover {
+
+    color: rgb(0, 195, 255);
 
 }

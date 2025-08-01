@@ -9,9 +9,20 @@
 
 }
 
+hr {
+
+    border: 1px solid rgb(8, 97, 124);
+    width: 70%;
+
+}
+
 h1 {
 
-text-align: center;
+    text-align: center;
+    color: rgb(8, 97, 124);
+    border-right: 1px solid rgb(0, 195, 255);
+    margin-right: 1em;
+    min-width: 200px;
 
 }
 
@@ -62,9 +73,47 @@ text-align: center;
 
 }
 
-#navbar ul li a:hover {
+#biggest {
+
+    min-width: 133px;
+    text-align: center;
+    color: rgb(8, 97, 124);
+    transition: .5s;
+
+}
+
+#biggest:hover {
 
     color:rgb(0, 195, 255)
+
+}
+
+
+#navbar ul li a:hover {
+
+    color:rgb(0, 195, 255);
+
+}
+
+
+
+#navbar span {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#navbar span p {
+
+    transition: .5s;
+
+}
+
+#navbar span p:hover {
+
+    color: rgb(8, 97, 124);
 
 }
 
@@ -95,7 +144,7 @@ footer {
 
 display: flex;
 justify-content: center;
-background-color: rgb(8, 97, 124);;
+background-color: rgb(8, 97, 124);
 border: 1px solid rgb(7, 63, 80);
 
 }
@@ -105,4 +154,99 @@ footer p {
     color:rgb(7, 63, 80);
     padding: 1em;
     font-weight: bold;
+}
+
+.auth-container {
+
+    margin: 0 auto;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+
+}
+
+.form-section {
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    min-width: 250px;
+
+}
+
+.form-section label {
+
+    font-weight: bold;
+    margin-bottom: .5em;
+
+}
+
+.form-section input, .form-section textarea {
+
+    padding: 5px;
+    border-radius: 5px;
+    border-color:rgb(8, 97, 124)
+}
+
+form input[type="submit"] {
+
+    background-color: transparent;
+    color:rgb(8, 97, 124);
+    border: 2px solid rgb(7, 63, 80);
+    padding: .5em 1.2em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .5s;
+
+}
+
+form input[type="submit"]:hover {
+
+    background-color: rgb(8, 97, 124);
+    color: white;
+
+}
+
+.auth-container a {
+
+    color:rgb(8, 97, 124);
+    text-decoration: none;
+
+}
+
+#flash {
+
+    color: white;
+    background-color:rgb(8, 97, 124);
+    padding: 1em;
+    text-align: center;
+    border: 1px solid rgb(0, 195, 255);
+    border-radius: 5px;
+    max-width: 60%;
+    margin: 0 auto 1em
+
+}
+
+#flash p, #flash a {
+
+    background-color: transparent;
+
+}
+
+#flash a {
+
+    text-decoration: none;
+    color: yellow;
+    transition: .5s;
+
+}
+
+#flash a:hover {
+
+    color: rgb(0, 195, 255);
+
 }

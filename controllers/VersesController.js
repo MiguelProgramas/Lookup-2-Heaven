@@ -2,7 +2,11 @@ const Verse = require('../models/Verse');
 const User = require('../models/User');
 
 module.exports = class VersesController {
-    static async showVerses(req, res) {
+    static showVerses(req, res) {
         res.render('verses/home');
+    }
+
+    static showDashboard(req, res) {
+        res.render('verses/dashboard');
     }
 }

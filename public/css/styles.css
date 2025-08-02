@@ -250,3 +250,43 @@ form input[type="submit"]:hover {
     color: rgb(0, 195, 255);
 
 }
+
+.button {
+
+    background-color: rgb(8, 97, 124);
+    color: white;
+    border: 2px solid rgb(7, 63, 80);
+    padding: .5em 1.4em;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .5s;
+    width: 10em;
+
+}
+
+.button:hover {
+
+    color: yellow;
+
+}
+
+.title {
+
+    height:8em;
+
+}
+
+.title h1 {
+
+    margin-bottom: 1em;
+
+}
+
+.dashboard h2 {
+
+    margin-top: 3em;
+
+}

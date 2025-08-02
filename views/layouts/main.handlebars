@@ -67,6 +67,12 @@
             </div>
         {{/if}}
 
+        {{#if timedOut}}
+            <div id="flash">
+                <p>This session has timed out! Sorry, but you have to login again!</p>
+            </div>
+        {{/if}}
+
 
     {{{body}}}
     </div>

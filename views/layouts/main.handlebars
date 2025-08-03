@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <script src="/js/scripts.js"></script>
 </head>
 <body>
     <nav id="navbar">
@@ -33,7 +34,7 @@
 
             {{#if session.userid}}
                 <li><a href="/verses/dashboard"><h3 id="biggest">Share a verse!</h3></a></li>
-                <li><a href="/logout"><h3>Logout</h3></a></li>
+                <li><a onclick="showLogoutQ()"><h3>Logout</h3></a></li>
             {{else}}
 
             <li><a href="/login"><h3>Login</h3></a></li>
@@ -42,6 +43,13 @@
             {{/if}}
 
         </ul>
+
+        <div id="logoutQ">
+
+            <p>Are you sure you want to log off?</p>
+            <p><a onclick="dismissLogoutQ()">No! </a><a href="/logout"> Yes!</a></p>
+
+        </div>
 
     </nav>
 
@@ -70,6 +78,12 @@
         {{#if timedOut}}
             <div id="flash">
                 <p>This session has timed out! Sorry, but you have to login again!</p>
+            </div>
+        {{/if}}
+
+        {{#if loggedOff}}
+            <div id="flash">
+                <p>You have logged off! See you soon!</p>
             </div>
         {{/if}}
 

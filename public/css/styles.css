@@ -70,6 +70,7 @@ h1 {
     font-weight: bold;
     color: black;
     transition: .5s;
+    cursor: pointer;
 
 }
 
@@ -320,5 +321,46 @@ form input[type="submit"]:hover {
     margin-top: 3em;
     border-left: 5px solid rgb(16, 110, 173);
     padding-left: .5em;
+
+}
+
+#logoutQ {
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 9em;
+    min-width: 6em;
+    border-left: 1px solid rgb(16, 110, 173);
+    padding: 0.2em;
+
+}
+
+#logoutQ a {
+
+    text-decoration: none;
+    color: black;
+    transition: .5s;
+    cursor: pointer;
+
+}
+
+#logoutQ p {
+
+    text-align: center;
+    margin: .2em;
+
+}
+
+#logoutQ a:hover {
+
+    color:rgb(8, 97, 124);
+
+}
+
+.visibleFlex {
+
+    display: flex;
 
 }

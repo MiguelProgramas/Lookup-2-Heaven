@@ -253,7 +253,7 @@ form input[type="submit"]:hover {
 
 .button {
 
-    background-color: rgb(14, 93, 146);
+    background-color: rgb(16, 110, 173);
     color: white;
     border: 2px solid rgb(0, 0, 0);
     padding: .3em .7em;
@@ -269,8 +269,8 @@ form input[type="submit"]:hover {
 
 .button:hover {
 
-    background-color: rgb(22, 155, 243);
-    color: black;
+    background-color: rgb(8, 97, 124);
+    box-shadow: 4px 4px 6px 2px black;
 
 }
 
@@ -318,5 +318,7 @@ form input[type="submit"]:hover {
 .dashboard h2 {
 
     margin-top: 3em;
+    border-left: 5px solid rgb(16, 110, 173);
+    padding-left: .5em;
 
 }

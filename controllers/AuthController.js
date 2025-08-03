@@ -5,7 +5,20 @@ module.exports = class AuthController {
 
     static login(req, res) {
 
+        if (req.query.timedOut) {
+
+          const timedOut = true;
+          
+        res.render('auth/login', { timedOut });
+
+        }
+
+        else {
+
         res.render('auth/login');
+
+        }
+
 
     }
 
@@ -115,7 +128,7 @@ module.exports = class AuthController {
 
     static logout(req, res) {
         req.session.destroy();
-        res.redirect('/');
+        res.redirect('/?loggedOff=yep');
     }
 
 }

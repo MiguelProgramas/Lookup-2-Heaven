@@ -6,17 +6,13 @@ module.exports = class VersesController {
 
         if (req.query.loggedOff) {
 
-            const loggedOff = true;
-
-            res.render('verses/home', { loggedOff });
+            req.flash('message', 'You have logged off! See you soon!');
 
         }
-
-        else {
 
         res.render('verses/home');
 
-        }
+    
     }
 
     static showDashboard(req, res) {

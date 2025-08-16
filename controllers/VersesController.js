@@ -18,4 +18,8 @@ module.exports = class VersesController {
     static showDashboard(req, res) {
         res.render('verses/dashboard');
     }
+
+    static createVerse(req, res) {
+        res.render('verses/add');
+    }
 }

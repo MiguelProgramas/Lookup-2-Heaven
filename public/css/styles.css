@@ -364,3 +364,45 @@ form input[type="submit"]:hover {
     display: flex;
 
 }
+
+.verse-adding-container a {
+
+    color: rgb(8, 97, 124);
+    text-decoration: none;
+    transition: .5s;
+
+}
+
+.verse-adding-container a:hover {
+
+    color: rgb(22, 138, 214);
+    padding: .5em;
+    border-radius: 5px;
+
+}
+
+.verse-adding-container label {
+
+    border-left: 4px solid rgb(16, 110, 173);
+    padding: .5em;
+
+}
+
+.verse-adding-container form {
+
+    max-width: 50%;
+
+}
+
+.submit {
+
+    transition: .5s;
+    max-width: 1em;
+
+}
+
+.submit:hover {
+
+    padding: 0 .5em 0;
+
+}

@@ -5,5 +5,6 @@ const checkAuth = require('../helpers/auth').checkAuth;
 
 router.get('/', VersesController.showVerses);
 router.get('/dashboard', checkAuth, VersesController.showDashboard);
+router.get('/add', checkAuth, VersesController.createVerse);
 
 module.exports = router;

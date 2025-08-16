@@ -9,8 +9,9 @@ const app = express();
 const conn = require('./db/conn');
 
 // Models
-const Tought = require('./models/Verse')
-const User = require('./models/User')
+const Tought = require('./models/Verse');
+const User = require('./models/User');
+const Fixed = require('./models/Fixed');
 
 // Routes
 

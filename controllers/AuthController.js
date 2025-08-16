@@ -45,7 +45,7 @@ module.exports = class AuthController {
 
             req.session.userid = user.id;
 
-            req.flash('message', 'You are logged in! Great to have you!');
+            req.flash('message', `You are logged in, ${user.name}! Great to have you!`);
 
             req.session.save(() => {
 
@@ -100,7 +100,7 @@ module.exports = class AuthController {
 
             req.session.userid = createdUser.id;
 
-            req.flash('message', 'You have succesfully registered an account! Hooray!');
+            req.flash('message', `You have succesfully registered an account, ${name}! Hooray!`);
 
             req.session.save(() => {
 

@@ -26,6 +26,9 @@ const AuthController = require('./controllers/AuthController');
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
+// Public path
+app.use(express.static('public'))
+
 // Required so it can accept body parameters
 app.use(
     express.urlencoded({
@@ -57,9 +60,6 @@ app.use(
 // Flash messages.
 
 app.use(flash())
-
-// Public path
-app.use(express.static('public'))
 
 // Set session to response
 app.use((req, res, next) => {

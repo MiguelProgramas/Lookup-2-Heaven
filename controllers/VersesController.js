@@ -34,4 +34,36 @@ module.exports = class VersesController {
 
         res.render('verses/add', { line, width });
     }
+
+    static async createVerseSave(req, res) {
+
+        const verse = {
+
+            title: req.body.title,
+            UserId: req.session.userid
+
+        }
+
+        try {
+
+            await Verse.create(verse);
+
+            req.flash('message', 'Verse added to the community tab succesfully! Thanks for your contribution!');
+
+            req.session.save(() => {
+
+                res.redirect('/verses/dashboard')
+
+            })
+
+
+        }
+        catch(err) {
+
+            console.log(`There was an error when attempting to share a verse: ${err}`)
+
+        }
+
+    }
+
 }

@@ -7,5 +7,6 @@ const feedFixedVerses = require('../helpers/fixedVerseFeeder').feedFixedVerses;
 router.get('/', VersesController.showVerses);
 router.get('/dashboard', checkAuth, VersesController.showDashboard);
 router.get('/add', checkAuth, feedFixedVerses, VersesController.createVerse);
+router.post('/add', checkAuth, VersesController.createVerseSave);
 
 module.exports = router;

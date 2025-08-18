@@ -16,8 +16,24 @@ module.exports = class VersesController {
     
     }
 
-    static showDashboard(req, res) {
-        res.render('verses/dashboard');
+    static async showDashboard(req, res) {
+
+        const userid = req.session.userid;
+
+        const user = await User.findOne({ where: {
+
+            id: userid
+
+        },
+
+        include: Verse,
+        plain: true
+    
+    })
+
+    const verses = user.Verses.map((verse) => verse.dataValues);
+
+        res.render('verses/dashboard', { verses });
     }
 
     static async createVerse(req, res) {

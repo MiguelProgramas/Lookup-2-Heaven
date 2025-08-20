@@ -11,7 +11,23 @@
 
         {{#each verses}}
 
-            <li>{{this.title}}</li>
+            <li>
+
+                <span class="label">{{this.title}}</span>
+                <span class="actions">
+
+                    <a href="/" class="btn">Edit verse</a>
+
+                    <form action="/">
+                    
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" value="Delete" class="btn">
+
+                    </form>
+
+                </span>
+
+            </li>
 
         {{/each}}
 

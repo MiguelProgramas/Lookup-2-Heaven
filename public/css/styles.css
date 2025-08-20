@@ -24,7 +24,11 @@ h1 {
 
 }
 
+.blue-p {
 
+    color: rgb(16, 110, 173)
+
+}
 
 #logo img {
 
@@ -196,7 +200,7 @@ footer p {
     border-color:rgb(8, 97, 124)
 }
 
-form input[type="submit"] {
+form input[type="submit"], .btn {
 
     background-color: transparent;
     color:rgb(8, 97, 124);
@@ -212,7 +216,7 @@ form input[type="submit"] {
 
 }
 
-form input[type="submit"]:hover {
+form input[type="submit"]:hover, .btn {
 
     background-color: rgb(8, 97, 124);
     color: white;
@@ -278,7 +282,6 @@ form input[type="submit"]:hover {
 .button:hover {
 
     background-color: rgb(8, 97, 124);
-    box-shadow: 4px 4px 6px 2px black;
 
 }
 
@@ -328,6 +331,40 @@ form input[type="submit"]:hover {
     margin-top: 3em;
     border-left: 5px solid rgb(16, 110, 173);
     padding-left: .5em;
+    margin-bottom: 1.5em;
+
+}
+
+.dashboard li {
+
+    padding: 12px;
+    border-bottom: 1px solid rgb(8, 97, 124);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.dashboard .label {
+
+    font-weight: bold;
+    color: rgb(16, 110, 173);
+    margin-right: 2em;
+
+
+}
+
+.dashboard .actions {
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.dashboard .actions .btn {
+
+    margin: 0 0.5em;
 
 }
 

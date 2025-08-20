@@ -1,1 +1,21 @@
 <h1>All the verses!</h1>
+
+{{#each readableVerses}}
+
+    <figure>
+
+        <blockquote>
+
+            "{{this.title}}"
+
+        </blockquote>
+
+        <figcaption>
+
+            by <span>{{this.User.name}}</span>
+
+        </figcaption>
+
+    </figure>
+
+{{/each}}

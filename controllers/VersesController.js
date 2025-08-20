@@ -3,7 +3,7 @@ const User = require('../models/User');
 const Fixed = require('../models/Fixed');
 
 module.exports = class VersesController {
-    static showVerses(req, res) {
+    static async showVerses(req, res) {
 
         if (req.query.loggedOff) {
 
@@ -11,7 +11,15 @@ module.exports = class VersesController {
 
         }
 
-        res.render('verses/home');
+        const verses = await Verse.findAll({
+
+            include: User
+
+        });
+
+        const readableVerses = verses.map((verse) => verse.get({ plain: true}));
+
+        res.render('verses/home', { readableVerses });
 
     
     }
@@ -111,6 +119,48 @@ module.exports = class VersesController {
         catch(err) {
 
             console.log(`There was a problem with deleting the verse: ${err}`);
+
+        }
+
+    }
+
+    static async updateVerse(req, res) {
+
+        const id = req.params.id;
+
+        const verse = await Verse.findOne({where: {id: id}, raw: true });
+
+        res.render('verses/edit', { verse });
+
+    }
+
+    static async updateVersePost(req, res) {
+
+        const verseId = req.body.id;
+
+        const newVerse = {
+
+            title: req.body.title,
+
+        }
+
+        try {
+
+        await Verse.update(newVerse, {where: {id: verseId}});
+
+        req.flash('message', 'Verse updated succesfully!');
+
+        req.session.save(() => {
+
+            res.redirect('/verses/dashboard');
+
+        })
+
+        }
+
+        catch(err) {
+
+            console.log(`We weren't able to update the verse: ${err}`)
 
         }
 

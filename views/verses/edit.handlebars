@@ -1,0 +1,25 @@
+<div class="verse-adding-container">
+
+    <a href="/verses/dashboard">Go back</a>
+    <h1>Editing a verse</h1>
+
+    <form action="/verses/edit" method="post">
+
+        <input type="hidden" name="id" value="{{verse.id}}">
+
+        <div class="form-section">
+    
+            <label for="title">Your verse was:</label>
+            <input type="text" name="title" value="'{{verse.title}}'" placeholder="{{verse.title}}" required>
+
+        </div>
+
+        <div class="submit">
+
+            <input type="submit" value="Update verse!">
+
+        </div>
+
+    </form>
+
+</div>

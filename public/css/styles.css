@@ -375,6 +375,12 @@ form input[type="submit"]:hover, .btn {
 
 }
 
+.dashboard p a {
+
+    color: rgb(8, 97, 124)
+
+}
+
 #logoutQ {
 
     display: none;

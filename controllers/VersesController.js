@@ -33,7 +33,15 @@ module.exports = class VersesController {
 
     const verses = user.Verses.map((verse) => verse.dataValues);
 
-        res.render('verses/dashboard', { verses });
+    let noVerses = false;
+
+    if (verses.length === 0) {
+
+         noVerses = true;
+
+    }
+
+        res.render('verses/dashboard', { verses, noVerses });
     }
 
     static async createVerse(req, res) {

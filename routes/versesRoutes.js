@@ -8,5 +8,6 @@ router.get('/', VersesController.showVerses);
 router.get('/dashboard', checkAuth, VersesController.showDashboard);
 router.get('/add', checkAuth, feedFixedVerses, VersesController.createVerse);
 router.post('/add', checkAuth, VersesController.createVerseSave);
+router.post('/remove', checkAuth, VersesController.removeVerse)
 
 module.exports = router;

@@ -82,4 +82,30 @@ module.exports = class VersesController {
 
     }
 
+    static async removeVerse(req, res) {
+
+        const verse = req.body.id;
+        const UserId = req.session.userid;
+
+        try {
+
+            await Verse.destroy({where: {id: verse, UserId: UserId}})
+
+            req.flash('message', 'Verse deleted succesfully!')
+
+            req.session.save(() => {
+
+                res.redirect('/verses/dashboard')
+
+            })
+
+        }
+        catch(err) {
+
+            console.log(`There was a problem with deleting the verse: ${err}`);
+
+        }
+
+    }
+
 }

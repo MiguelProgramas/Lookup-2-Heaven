@@ -49,7 +49,9 @@ module.exports = class VersesController {
 
     }
 
-        res.render('verses/dashboard', { verses, noVerses });
+    const verseId = req.query.id;
+
+        res.render('verses/dashboard', { verses, noVerses, verseId });
     }
 
     static async createVerse(req, res) {
@@ -80,11 +82,11 @@ module.exports = class VersesController {
 
             await Verse.create(verse);
 
-            req.flash('message', 'Verse added to the community tab succesfully! Thanks for your contribution!');
+            const latestVerse = await Verse.findOne({order: [['createdAt', 'DESC']], raw:true});
 
             req.session.save(() => {
 
-                res.redirect('/verses/dashboard')
+                res.redirect(`/verses/dashboard?id=${latestVerse.id}`);
 
             })
 

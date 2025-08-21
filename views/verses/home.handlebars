@@ -1,21 +1,63 @@
-<h1>All the verses!</h1>
+<div id="home-header">
 
-{{#each readableVerses}}
+    <h1>Look (down) to our shared verses!</h1>
 
-    <figure>
+    <form action="" method="post">
 
-        <blockquote>
+        <input type="text" name="search" placeholder="Looking for any specific one?" required>
+        <input type="submit" value="Search!">
 
-            "{{this.title}}"
+    </form>
 
-        </blockquote>
+    <div id="order-container">
 
-        <figcaption>
+        <span>Order by:</span>
 
-            by <span>{{this.User.name}}</span>
+        <form action="/" method="get">
 
-        </figcaption>
+            <input type="hidden" name="search" value="{{this.search}}">
+            <input type="hidden" name="order" value="new">
 
-    </figure>
+            <button type="submit"><i class="bi bi-arrow-up"></i></button>
 
-{{/each}}
+        </form>
+
+        <form action="/" method="get">
+
+            <input type="hidden" name="search" value="{{this.search}}">
+            <input type="hidden" name="order" value="old">
+
+            <button type="submit"><i class="bi bi-arrow-down"></i></button>
+
+        </form>
+
+        <a href="/">Clean search</a>
+
+    </div>
+
+</div>
+
+<div id="verses-container">
+
+
+    {{#each readableVerses}}
+
+        <figure>
+
+            <blockquote>
+
+                "{{this.title}}"
+
+            </blockquote>
+
+            <figcaption>
+
+                by <span>{{this.User.name}}</span>
+
+            </figcaption>
+
+        </figure>
+
+    {{/each}}
+
+</div>

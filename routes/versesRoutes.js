@@ -11,5 +11,6 @@ router.get('/edit/:id', checkAuth, VersesController.updateVerse);
 router.post('/add', checkAuth, VersesController.createVerseSave);
 router.post('/remove', checkAuth, VersesController.removeVerse);
 router.post('/edit', checkAuth, VersesController.updateVersePost)
+router.get('/undo', checkAuth, VersesController.undoVerseRemoval);
 
 module.exports = router;

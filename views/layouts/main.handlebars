@@ -83,6 +83,22 @@
 
         {{/if}}
 
+        {{#if deletedVerse}}
+
+            <div id="flash">
+                <p>Verse deleted succesfully! Was that a <a href="/verses/undo?verseId={{deletedVerse.id}}&UserId={{deletedVerse.UserId}}&title={{deletedVerse.title}}">mistake?</a></p>
+            </div>
+
+        {{/if}}
+
+        {{#if revived}}
+
+            <div id="flash">
+                <p>Your verse has been brought back! Please, do exercice more caution!</p>
+            </div>
+
+        {{/if}}
+
     {{{body}}}
     </div>
     <footer>

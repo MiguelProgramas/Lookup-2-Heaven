@@ -51,7 +51,29 @@ module.exports = class VersesController {
 
     const verseId = req.query.id;
 
-        res.render('verses/dashboard', { verses, noVerses, verseId });
+    let deletedVerse = false;
+
+    if (req.query.title) {
+
+         deletedVerse = {
+
+            id: req.query.verseId,
+            UserId: req.query.UserId,
+            title: req.query.title
+
+        }
+
+    }
+
+    let revived = false;
+
+    if (req.query.undone) {
+
+        revived = true;
+
+    }
+
+        res.render('verses/dashboard', { verses, noVerses, verseId, deletedVerse, revived });
     }
 
     static async createVerse(req, res) {
@@ -104,16 +126,16 @@ module.exports = class VersesController {
 
         const verse = req.body.id;
         const UserId = req.session.userid;
+        const text = await Verse.findOne({where: {id: verse, UserId: UserId}, raw:true});
+        console.log(text.title)
 
         try {
 
             await Verse.destroy({where: {id: verse, UserId: UserId}})
 
-            req.flash('message', 'Verse deleted succesfully!')
-
             req.session.save(() => {
 
-                res.redirect('/verses/dashboard')
+                res.redirect(`/verses/dashboard?verseId=${verse}&UserId=${UserId}&title=${text.title}`)
 
             })
 
@@ -165,6 +187,22 @@ module.exports = class VersesController {
             console.log(`We weren't able to update the verse: ${err}`)
 
         }
+
+    }
+
+    static async undoVerseRemoval(req, res) {
+
+        const versePhoenix = {
+
+            id: req.query.verseId,
+            title: req.query.title,
+            UserId: req.query.UserId
+
+        }
+
+        await Verse.create(versePhoenix);
+
+        res.redirect('/verses/dashboard?undone=yep')
 
     }
 

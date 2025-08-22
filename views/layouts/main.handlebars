@@ -25,7 +25,7 @@
             </div>
         </a>
 
-        <span><p>Lookup</p><p> (to) </p><p> Heaven!</p></span>
+        <span><p class="blue-p">Lookup</p><p> (to) </p><p class="blue-p"> Heaven!</p></span>
 
         <hr>
 
@@ -75,18 +75,29 @@
             </div>
         {{/if}}
 
-        {{#if timedOut}}
+        {{#if verseId}}
+
             <div id="flash">
-                <p>This session has timed out! Sorry, but you have to login again!</p>
+                <p>Verse shared succesfully! Thanks for your <a style="text-decoration:underline" href="/verses/edit/{{verseId}}">contribution!</a></p>
             </div>
+
         {{/if}}
 
-        {{#if loggedOff}}
+        {{#if deletedVerse}}
+
             <div id="flash">
-                <p>You have logged off! See you soon!</p>
+                <p>Verse deleted succesfully! Was that a <a href="/verses/undo?verseId={{deletedVerse.id}}&UserId={{deletedVerse.UserId}}&title={{deletedVerse.title}}">mistake?</a></p>
             </div>
+
         {{/if}}
 
+        {{#if revived}}
+
+            <div id="flash">
+                <p>Your verse has been brought back! Please, do exercice more caution!</p>
+            </div>
+
+        {{/if}}
 
     {{{body}}}
     </div>

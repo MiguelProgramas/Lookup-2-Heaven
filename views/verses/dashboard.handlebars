@@ -7,4 +7,36 @@
 
     <h2>Here are the verses currently added by you:</h2>
 
+    <ul>
+
+        {{#each verses}}
+
+            <li>
+
+                <span class="label">{{this.title}}</span>
+                <span class="actions">
+
+                    <a href="/verses/edit/{{this.id}}" class="btn">Edit verse</a>
+
+                    <form action="/verses/remove" method="post">
+                    
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" value="Delete" class="btn">
+
+                    </form>
+
+                </span>
+
+            </li>
+
+        {{/each}}
+
+    </ul>
+
+    {{#if noVerses}}
+
+            <p>It seems you have not added any verses to the community tab yet. Should you wish to change that, <a href="/verses/add">click here!</a></p>
+
+    {{/if}}
+
 </div>

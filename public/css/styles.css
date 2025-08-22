@@ -371,3 +371,18 @@ form input[type="submit"]:hover {
     display: flex;
 
 }
+
+#alreadyLogged {
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 5em;
+    align-items: center;
+
+}
+
+#alreadyLogged span {
+
+    color: rgb(16, 110, 173);
+
+}

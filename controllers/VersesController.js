@@ -20,6 +20,14 @@ module.exports = class VersesController {
 
         }
 
+        let order = 'DESC';
+
+        if (req.query.order === 'old') {
+
+            order = 'ASC';
+
+        }
+
         const verses = await Verse.findAll({
 
             include: User,
@@ -27,7 +35,8 @@ module.exports = class VersesController {
 
                 title: {[Op.like]: `%${search}%`}
 
-            }
+            },
+            order: [['createdAt', order]]
 
         });
 

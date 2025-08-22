@@ -11,7 +11,16 @@ module.exports = class AuthController {
 
         }
 
-    res.render('auth/login');
+        let alreadyLogged = false;
+
+        if (req.session.userid) {
+
+            alreadyLogged = true;
+
+        }
+
+
+    res.render('auth/login', { alreadyLogged });
 
 
     }

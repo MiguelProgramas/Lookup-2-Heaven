@@ -559,44 +559,17 @@ form input[type="submit"]:hover, .btn {
 
 }
 
-.verse-adding-container a {
+#alreadyLogged {
 
-    color: rgb(8, 97, 124);
-    text-decoration: none;
-    transition: .5s;
-
-}
-
-.verse-adding-container a:hover {
-
-    color: rgb(22, 138, 214);
-    padding: .5em;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5em;
+    align-items: center;
 
 }
 
-.verse-adding-container label {
+#alreadyLogged span {
 
-    border-left: 4px solid rgb(16, 110, 173);
-    padding: .5em;
-
-}
-
-.verse-adding-container form {
-
-    max-width: 70%;
-
-}
-
-.submit {
-
-    transition: .5s;
-    max-width: 1em;
-
-}
-
-.submit:hover {
-
-    padding: 0 .5em 0;
+    color: rgb(16, 110, 173);
 
 }

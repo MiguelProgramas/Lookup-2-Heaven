@@ -1,8 +1,35 @@
 <div id="home-header">
 
-    <h1>Look (down) to our shared verses!</h1>
+    {{#if search}}
 
-    <form action="" method="post">
+        <h1>You are currently searching for: <span>'{{search}}'</span></h1>
+
+        {{#if versesQuantity}}
+
+            {{#if versesQuantities}}
+
+                <p>We have found <span>{{versesQuantity}}</span> verses!</p>
+
+            {{else}}
+
+                <p>We have found only <span>{{versesQuantity}}</span> verse!</p>
+
+            {{/if}}
+
+        {{else}}
+
+            <p>Sorry, <span>no verses</span> matched your query.</p>
+
+        {{/if}}
+
+    {{else}}
+
+        <h1>Look (down) to our <span>shared verses!</span></h1>
+
+    {{/if}}
+
+
+    <form action="/" method="get">
 
         <input type="text" name="search" placeholder="Looking for any specific one?" required>
         <input type="submit" value="Search!">
@@ -39,25 +66,40 @@
 
 <div id="verses-container">
 
+    {{#if readableVerses}}
 
-    {{#each readableVerses}}
+        {{#each readableVerses}}
 
-        <figure>
+            <figure>
 
-            <blockquote>
+                <blockquote>
 
-                "{{this.title}}"
+                    "{{this.title}}"
 
-            </blockquote>
+                </blockquote>
 
-            <figcaption>
+                <figcaption>
 
-                by <span>{{this.User.name}}</span>
+                    by <span>{{this.User.name}}</span>
 
-            </figcaption>
+                </figcaption>
 
-        </figure>
+            </figure>
 
-    {{/each}}
+        {{/each}}
+
+    {{else}}
+
+        {{#if search}}
+
+            <h2>Sorry! <span>No verses found!</span></h2>
+
+        {{else}}
+
+            <h2>It looks like there are no shared verses at the moment. Why not <a href="/login">logging in</a> and starting it off?</h2>
+
+        {{/if}}
+    
+    {{/if}}
 
 </div>

@@ -1,6 +1,7 @@
 const Verse = require('../models/Verse');
 const User = require('../models/User');
 const Fixed = require('../models/Fixed');
+const { Op } = require('sequelize');
 
 module.exports = class VersesController {
     static async showVerses(req, res) {
@@ -11,15 +12,38 @@ module.exports = class VersesController {
 
         }
 
+        let search = '';
+
+        if (req.query.search) {
+
+            search = req.query.search;
+
+        }
+
         const verses = await Verse.findAll({
 
-            include: User
+            include: User,
+            where: {
+
+                title: {[Op.like]: `%${search}%`}
+
+            }
 
         });
 
         const readableVerses = verses.map((verse) => verse.get({ plain: true}));
 
-        res.render('verses/home', { readableVerses });
+        let versesQuantity = readableVerses.length;
+
+        let versesQuantities = false;
+
+        if (versesQuantity > 1) {
+
+            versesQuantities = true;
+
+        } 
+
+        res.render('verses/home', { readableVerses, search, versesQuantity, versesQuantities });
 
     
     }

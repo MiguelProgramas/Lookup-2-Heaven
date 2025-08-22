@@ -394,12 +394,13 @@ form input[type="submit"]:hover, .btn {
 #home-header h1 {
 
     margin-bottom: 1em;
+    color: black;
 
 }
 
 #home-header span {
 
-    color: rgb(16, 110, 173);
+    color: rgb(16, 110, 173) !important;
     font-weight: bold;
 
 }
@@ -493,6 +494,27 @@ form input[type="submit"]:hover, .btn {
 #verses-container span {
 
     color: rgb(8, 97, 124);
+
+}
+
+#verses-container h2 {
+
+    margin: 1.5em 0;
+    text-align: center;
+
+}
+
+#verses-container h2 a {
+
+    text-decoration: none;
+    color: rgb(16, 110, 173);
+    transition: .5s;
+
+}
+
+#verses-container h2 a:hover {
+
+    color: rgb(0, 195, 255);
 
 }
 

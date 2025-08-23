@@ -573,3 +573,30 @@ form input[type="submit"]:hover, .btn {
     color: rgb(16, 110, 173);
 
 }
+
+.verse-adding-container a {
+
+    color: rgb(8, 97, 124);
+    text-decoration: none;
+    transition: .5s;
+
+}
+
+.verse-adding-container a:hover {
+
+    padding: 1em;
+
+}
+
+.verse-adding-container .submit {
+
+    transition: .5s;
+    max-width: 10em;
+
+}
+
+.verse-adding-container .submit:hover {
+
+    padding: 0 1em;
+
+}
